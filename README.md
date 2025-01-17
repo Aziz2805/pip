@@ -1,2 +1,2 @@
 # pip
-PIP R- evitalisation des Petites Villes
+PIP - Revitalisation des Petites Villes
