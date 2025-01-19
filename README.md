@@ -33,7 +33,7 @@ python app.py
 
 ```
 
-2. Ouvrir le lien "http://127.0.0.1:8050/home" dans un navigateur web
+2. Ouvrir le lien http://127.0.0.1:8050/home dans un navigateur web
 
 
 And enjoy !
