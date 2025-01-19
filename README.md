@@ -31,4 +31,9 @@ pip install -r requirements.txt
 # Lancez l'application Dash :
 python app.py
 
-#Et le tour est joué !
+```
+
+2. Ouvrir le lien "http://127.0.0.1:8050/home" dans un navigateur web
+
+
+And enjoy !
