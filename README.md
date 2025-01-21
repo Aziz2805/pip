@@ -33,14 +33,14 @@ pip install gdown
 
 #Importation des données depuis Drive
 echo "Téléchargement des données depuis Google Drive..."
-gdown "https://drive.google.com/uc?id=1o0UXLmnEsX0Rqe896gUW0gozul-H_Yp-" -O "utils.rar" || { echo "Échec du téléchargement. Vérifiez l'ID du fichier."; exit 1; }
+gdown "https://drive.google.com/uc?id=1o0UXLmnEsX0Rqe896gUW0gozul-H_Yp-" -O "utils.zip" || { echo "Échec du téléchargement. Vérifiez l'ID du fichier."; exit 1; }
 
 # Installation des dépendances du projet :
 pip install -r requirements.txt
 
 # Extraction des données:
 echo "Extraction des données..."
-unzip -o "${FILE_NAME}" -d "utils" || { echo "Échec de l'extraction."; exit 1; }
+unzip -o "utils.zip" -d "utils" || { echo "Échec de l'extraction."; exit 1; }
 
 # Lancez l'application Dash :
 python app.py
