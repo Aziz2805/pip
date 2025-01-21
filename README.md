@@ -40,7 +40,7 @@ pip install -r requirements.txt
 
 # Extraction des données:
 echo "Extraction des données..."
-unzip -o "utils.zip" -d "utils" || { echo "Échec de l'extraction."; exit 1; }
+python loadData.py
 
 # Lancez l'application Dash :
 python app.py
