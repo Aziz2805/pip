@@ -21,11 +21,26 @@
 # Déplacez-vous dans le dossier où vous souhaitez cloner le projet :
 cd /chemin/vers/dossier/
 
+# Créer un environnement virtuel si non existant
+if [ ! -d "venv" ]; then
+    python3 -m venv venv
+    echo "Environnement virtuel créé."
+fi
+
+# Activer l'environnement virtuel
+source venv/bin/activate
+
 # Clonez le dépôt GitHub :
 git clone https://github.com/Aziz2805/PIP.git
 
 # Accédez au dossier cloné :
 cd PIP
+
+#Générez le fichier des dependances
+pip > freeze > requirements.txt
+
+# Installer les dépendances
+pip install -r requirements.txt
 
 #Installation de gdown pour pouvoir importer les données
 echo "Installation de gdown ..."
@@ -35,14 +50,9 @@ pip install gdown
 echo "Téléchargement des données depuis Google Drive..."
 gdown "https://drive.google.com/uc?id=1o0UXLmnEsX0Rqe896gUW0gozul-H_Yp-" -O "utils.zip" || { echo "Échec du téléchargement. Vérifiez l'ID du fichier."; exit 1; }
 
-# Installation des dépendances du projet :
-pip install -r requirements.txt
 
-# Extraction des données:
-echo "Extraction des données..."
-python loadData.py
-
-# Lancez l'application Dash :
+# Lancer l'application
+python laodData.py
 python app.py
 
 ```
