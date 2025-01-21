@@ -16,13 +16,10 @@
 
 1. Ouvrir un terminal et exécuter le script suivant :
 
-FILE_ID = "1o0UXLmnEsX0Rqe896gUW0gozul-H_Yp-"
-FILE_NAME = utils.rar
-
 ```bash
 
 # Déplacez-vous dans le dossier où vous souhaitez cloner le projet :
-#cd /chemin/vers/dossier/
+cd /chemin/vers/dossier/
 
 # Clonez le dépôt GitHub :
 git clone https://github.com/Aziz2805/PIP.git
@@ -34,7 +31,7 @@ cd PIP
 echo "Installation de gdown ..."
 pip install gdown
 
-#Importation des données
+#Importation des données depuis Drive
 echo "Téléchargement des données depuis Google Drive..."
 gdown "https://drive.google.com/uc?id=1o0UXLmnEsX0Rqe896gUW0gozul-H_Yp-" -O "utils.rar" || { echo "Échec du téléchargement. Vérifiez l'ID du fichier."; exit 1; }
 
@@ -49,6 +46,8 @@ unzip -o "${FILE_NAME}" -d "utils" || { echo "Échec de l'extraction."; exit 1; 
 python app.py
 
 ```
+
+PS: Le dossier utils (contenant les données et les scripts de prétraitement) étant trop volumineux, il n'était pas possible pour nous de le push dans le repo. C'est pourquoi l'imporation de ce dossier se réalisera à partir de Drive.
 
 
 2. Rendez-vous sur http://127.0.0.1:8050/home.
