@@ -270,7 +270,7 @@ def render_tab_content(tab):
 
 # ========== 6) Callback pour mettre à jour le layout de chaque onglet ==========
 
-@app.callback(
+@callback(
     Output("tab-content", "children"),
     Input("main-tabs", "value")
 )
@@ -278,7 +278,7 @@ def update_tab_content(selected_tab):
     return render_tab_content(selected_tab)
 
 # ========== 7) Callbacks pour les PVD (onglet "kpi") ===========================
-@app.callback(
+@callback(
     Output("total_regions", "children"),
     Output("total_departements", "children"),
     Output("total_communes", "children"),
@@ -374,7 +374,7 @@ def update_kpi_values(tab):
 
 # ========== 8) Callbacks pour l’onglet "commerces" =========================
 
-@app.callback(
+@callback(
     Output("hist_types", "figure"),
     Output("trend_commerces", "figure"),
     Output("top_10_commerces", "figure"),
@@ -445,7 +445,7 @@ def update_commerces_charts(tab):
 
 # ========== 9) Callbacks pour l’onglet "departements" ======================
 
-@app.callback(
+@callback(
     Output("concentration_dept", "figure"),
     Output("repartition_types_dept", "figure"),
     Input("main-tabs", "value"),
@@ -486,7 +486,7 @@ def update_dept_charts(tab, selected_dept):
 
 # ========== 12) Callbacks Explorer (cascade Région -> Dept -> Commune) =====
 
-@app.callback(
+@callback(
     Output("explore_dept", "options"),
     Output("explore_dept", "value"),
     Input("explore_region", "value")
@@ -501,7 +501,7 @@ def update_dept_options(selected_region):
     val = depts[0] if len(depts) > 0 else None
     return opts, val
 
-@app.callback(
+@callback(
     Output("explore_commune", "options"),
     Output("explore_commune", "value"),
     Input("explore_region", "value"),
@@ -520,7 +520,7 @@ def update_commune_options(selected_region, selected_dept):
     val = communes[0] if len(communes) > 0 else None
     return opts, val
 
-@app.callback(
+@callback(
     Output("explore_commerce_distribution", "figure"),
     Output("explore_top_types", "figure"),
     Output("diversity_commune", "figure"),
@@ -606,7 +606,7 @@ def update_explorer_charts(region, dept, commune, tab):
 
 
 # ========== 13) Callbacks comparatif communes ==============================
-@app.callback(
+@callback(
     Output("commune_comparison_chart", "figure"),
     Output("commune1_wordcloud", "figure"),
     Output("commune2_wordcloud", "figure"),
